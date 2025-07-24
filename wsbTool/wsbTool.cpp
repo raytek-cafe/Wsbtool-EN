@@ -51,7 +51,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	PROCESS_INFORMATION stProcessInfo;
 	memset(&stProcessInfo, 0, sizeof(stProcessInfo));
 
-	std::wstring cmd = GetExePath() + L"\\wsbapp.dll";
+	std::wstring cmd = GetExePath() + L"\\Windows Style Builder.exe";
 
 	bool ret = ::CreateProcessW(cmd.c_str(),NULL,NULL,NULL,false,CREATE_NEW_CONSOLE,NULL,NULL,&stStartUpInfo,&stProcessInfo);
 
@@ -61,15 +61,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		{
 			NTSTATUS ntStatus = RhInjectLibrary(stProcessInfo.dwProcessId, 0, EASYHOOK_INJECT_DEFAULT, dllPath.GetBuffer(), NULL, NULL, 0);
 			if (ntStatus != 0) {
-				std::wstring error = L"哎呀出错了！(扩展加载失败 code:";
+				std::wstring error = L"Oh no, something went wrong! (Extension loading failed code:";
 				error += std::to_wstring(ntStatus);
 				error += L")";
-				MessageBoxW(0, error.c_str(), L"错误", MB_ICONERROR);
+				MessageBoxW(0, error.c_str(), L"error", MB_ICONERROR);
 			}
 		}
 	}
 	else
-		MessageBoxW(0, L"哎呀出错了！(应用进程创建失败)", L"错误", MB_ICONERROR);
+		MessageBoxW(0, L"Oops, something went wrong! (Application process creation failed)", L"error", MB_ICONERROR);
 
     return 0;
 }

@@ -61,8 +61,8 @@ namespace wsbToolSettings
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("确定要禁用扩展吗？请注意先保存主题！避免丢失！点击确定立即禁用并重启程序\n(如需恢复扩展请删除Data目录下的noLib文件)",
-                "禁用", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("Are you sure you want to disable the extension? Please save your theme first to avoid losing it! Click OK to disable it immediately and restart the program. (To restore the extension, delete the noLib file in the Data directory.)",
+                "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //创建标识文件
                 FileInfo f = new FileInfo("./Data/noLib");
@@ -75,6 +75,13 @@ namespace wsbToolSettings
                 Dispose();
                 Application.Exit();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Credits creditsForm = new Credits();
+            creditsForm.Show();
+            creditsForm.Focus();
         }
     }
 }

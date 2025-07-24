@@ -1,0 +1,9 @@
+/.vs
+/Release
+/wsbTool/Release
+/wsbToolLib/ToolLib/Release
+/wsbToolSettings/wsbToolSettings/bin
+/wsbToolSettings/wsbToolSettings/obj
+/x64
+/wsbTool/x64
+/wsbToolLib/ToolLib/x64

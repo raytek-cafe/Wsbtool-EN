@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("wsbToolSettings")]
-[assembly: AssemblyCopyright("Copyright © winmoes.com 2019")]
+[assembly: AssemblyCopyright("Copyright © winmoes.com 2019 - raytek.cafe 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
